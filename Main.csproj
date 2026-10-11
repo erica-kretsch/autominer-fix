@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="Main.props"/>
+  <Import Project="Template/Template.props"/>
+  <Import Project="Template/FindStationeers.props"/>
+  <!--
+    Load a local props file if present - this should not be checked-in, but should allow the
+    developer to add local path or tool overrides, etc.
+  -->
+  <Import Project="Local.Developer.props" Condition="Exists('Local.Developer.props')" />
+</Project>

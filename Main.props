@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- MANDATORY: Change this to your mod id. This will be used as Bepinex plugin GUID and as ModID in About.xml -->
+    <ModID>autominer-fix</ModID>
+    <AssemblyName>AutominerFix</AssemblyName>
+    <Description>Fixes the base game's Autominer leaving alternating voxels untouched at the corners of a vertical pit.</Description>
+    <!-- Optional: Set this in Local.Developer.props if it's not found automatically or you want to force a specific Stationeers directory -->
+    <!-- <StationeersDllDir>Template/libs</StationeersDllDir> -->
+  </PropertyGroup>
+  <ItemGroup>
+    <!--
+      Template/libs holds stub game DLLs for CI. SDK globbing adds them as None items, and
+      MSBuild resolves candidate files before HintPaths, so without this the build silently
+      compiles against the stubs (an older game version) instead of StationeersDllDir.
+    -->
+    <None Remove="Template/libs/**" />
+  </ItemGroup>
+</Project>
