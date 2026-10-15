@@ -63,7 +63,15 @@ and from 144 fps one voxel missing per layer alternating between the front and r
 the two missing voxels in the first row of the first layer. Patched, every layer is 16/16 at
 every frame rate tried.
 
-The mod itself has not been run in the game yet.
+The mod was then tested in the game with an Autominer (Small), at 117–205 fps: above the
+50 fps threshold, so the layer-change bug could occur. Observed:
+
+- No voxels left in the corners.
+- Each descent dug out 1 m × 0.5 m.
+- Unchanged behaviour elsewhere: it exposed lava on Vulcan, worked on Mimas, still caused the
+  same chaotic airflow on Venus (the mining head changes the cell volume), and still gathered
+  ores.
+- It stopped after trying to descend into bedrock, and that attempt did not mine bedrock.
 
 ## Building
 
