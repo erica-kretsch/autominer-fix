@@ -57,7 +57,7 @@ namespace AutominerFix.Patches
             if (matches.Count != ExpectedMatches)
             {
                 // The game changed RunDrillBit. Leave vanilla behaviour rather than guess.
-                L.Warning(
+                AutominerFixPlugin.Log.LogWarning(
                     $"Quarry.RunDrillBit: expected {ExpectedMatches} carriage-target comparisons, "
                         + $"found {matches.Count}; layer-change fix not applied."
                 );
@@ -75,7 +75,7 @@ namespace AutominerFix.Patches
                 }
             );
 
-            L.Info("Quarry.RunDrillBit: layer-change fix applied.");
+            AutominerFixPlugin.Log.LogInfo("Quarry.RunDrillBit: layer-change fix applied.");
             return code;
         }
 

@@ -39,7 +39,7 @@ fps lost a voxel on every layer; real frame pacing is uneven, so expect it to co
 between those. Only the column of the corner that no other stop reaches is lost, so one voxel
 per layer.
 
-**Fix** ([QuarryRunDrillBitPatch.cs](mod/Patches/QuarryRunDrillBitPatch.cs)): a transpiler adds
+**Fix** ([QuarryRunDrillBitPatch.cs](Patches/QuarryRunDrillBitPatch.cs)): a transpiler adds
 `&& DrillHead.localPosition == _drillEndSegmentY` to the arrival test, so the gantry waits for
 the head to finish descending before it decides it has arrived.
 
@@ -49,7 +49,7 @@ The carriage starts at the +X edge of the pit, and the sweep direction starts as
 first step is out of bounds, `HandleOutsideBounds` pulls it back and moves to the next row, and
 the rest of the first row of the first layer is never visited. Two voxels are left.
 
-**Fix** ([QuarrySetupDrillHeadPatch.cs](mod/Patches/QuarrySetupDrillHeadPatch.cs)): after
+**Fix** ([QuarrySetupDrillHeadPatch.cs](Patches/QuarrySetupDrillHeadPatch.cs)): after
 `SetupDrillHead`, start the sweep towards -X if the first +X step would leave the pit. Saves
 restore the direction after that, so a half-dug pit carries on as before.
 
@@ -67,8 +67,7 @@ The mod itself has not been run in the game yet.
 
 ## Building
 
-Needs the .NET SDK, Python (the template's version generator calls `python`), and a Stationeers
-install.
+Needs the .NET SDK and a Stationeers install.
 
 ```
 dotnet build Main.csproj
@@ -77,7 +76,7 @@ dotnet build Main.csproj -t:Install
 
 The second form copies the plugin and `About/` into LaunchPad's local mods folder. Set the game
 path in a gitignored `Local.Developer.props` if it isn't found automatically. See
-[AGENTS.md](AGENTS.md) for the repo's quirks (tags, stub DLLs, CI).
+[AGENTS.md](AGENTS.md) for the repo's quirks (versioning, local paths, CI).
 
 `About/Preview.png` and `About/thumb.png` come from `python tools/make_images.py` (Pillow).
 
