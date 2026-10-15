@@ -24,9 +24,6 @@ Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
 
 ## Working in this repo
 
-- **Git line endings.** The machine's global `core.safecrlf=true` rejects LF files on `add`,
-  `commit` and `stash`, and on `git submodule add`. Pass `-c core.safecrlf=false` on those
-  commands; don't change the config.
 - **Versioning.** The build runs `git describe --tags --match v*` (through
   `Template/create_version_info.py`), so it needs a commit and a `v*` tag. With no tag the
   version generator fails.
@@ -43,7 +40,9 @@ Assisted-by: AGENT_NAME:MODEL_VERSION [TOOL1] [TOOL2]
   patches name `Quarry`'s private fields and methods directly. The transpiler matches IL by
   shape and refuses to patch (with a warning in the BepInEx log) if the game's `RunDrillBit`
   no longer has the shape it expects. After a game update, check that warning first.
-- **The decompiled source.** `Quarry` is
-  `Assets\Scripts\Objects\Electrical\Quarry.cs` under
-  `C:\Users\erica\Source\Decompilation\Stationeers\Assembly-CSharp`. Note that
+- **The decompiled source.** Decompile the game's `Assembly-CSharp.dll` (for example with
+  dotPeek); `Quarry` is `Assets\Scripts\Objects\Electrical\Quarry.cs` in the output. Note that
   `HorizontalQuarry.cs` is the horizontal auto miner, a different machine.
+- **CI.** `.github/workflows/deploy.yml` hands off to `Template/action.yml`, which builds
+  against the template's stub DLLs and, on a `v*` tag, attaches a zip of the DLL and `About/`
+  to a GitHub release.

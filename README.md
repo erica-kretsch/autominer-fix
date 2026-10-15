@@ -77,7 +77,7 @@ dotnet build Main.csproj -t:Install
 
 The second form copies the plugin and `About/` into LaunchPad's local mods folder. Set the game
 path in a gitignored `Local.Developer.props` if it isn't found automatically. See
-[AGENTS.md](AGENTS.md) for the repo's quirks (tags, line endings, stub DLLs).
+[AGENTS.md](AGENTS.md) for the repo's quirks (tags, stub DLLs, CI).
 
 `About/Preview.png` and `About/thumb.png` come from `python tools/make_images.py` (Pillow).
 
