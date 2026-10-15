@@ -34,6 +34,8 @@ Requires BepInEx and StationeersLaunchPad.
     [*]Sweep the first row of a new pit across its full width.
     [/list]
   </ChangeLog>
+  <!-- Set by LaunchPad on first publish; keeps later publishes updating the same Workshop item. -->
+  <WorkshopHandle>3820104936</WorkshopHandle>
   <Tags>
     <Tag>Quality of Life</Tag>
     <Tag>Bugfix</Tag>

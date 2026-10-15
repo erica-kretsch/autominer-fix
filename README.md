@@ -2,6 +2,9 @@
 
 A [StationeersLaunchPad](https://github.com/StationeersLaunchPad/StationeersLaunchPad) plugin
 mod that fixes the base game's Autominer leaving voxels untouched when it digs a vertical pit.
+Install it from the
+[Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3820104936) or from
+[GitHub releases](https://github.com/erica-kretsch/autominer-fix/releases).
 
 <img src="About/Preview.png" alt="Vanilla leaves a corner standing every other layer; the fix clears it" width="640">
 
